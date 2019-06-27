@@ -6,6 +6,8 @@ We provide bash scripts to compile the code on
 
 * Fedora using the HPX package (buildFedora.sh)
 * Fedora building HPX (buildFedoraAll.sh)
+* Ubuntu 18.04 using libvtk7-dev
+* Ubuntu 16.04 
 
 
 ## Docker
