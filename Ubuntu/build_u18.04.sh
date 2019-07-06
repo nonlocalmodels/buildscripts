@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # local directory with external libraries
-local="/home/prashant/Softwares/local"
+local="${HOME}/Softwares/local"
 
 # clean previous build files (optional)
 ./clean.sh
