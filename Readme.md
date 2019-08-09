@@ -21,7 +21,7 @@ You have to install [Docker](https://docs.docker.com/) on your local machine and
 
 ```bash
 cd Docker
-docker build --tag=playground Fedora
+docker build --tag=playground -f Fedora .
 docker run playground
 ```
 
