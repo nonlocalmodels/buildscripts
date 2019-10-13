@@ -22,6 +22,10 @@ yamlcpp_dir="$local""/yaml-cpp/yaml-cpp-""$yamlcpp_ver"
 blaze_ver="3.5"
 blaze_dir="$local""/blaze/blaze-""$blaze_ver"
 
+# blazeiterative
+blazeit_ver="13Oct2019"
+blazeit_dir="$local""/blazeiterative/BlazeIterative-""$blaze_ver"
+
 # target directory where code will be built
 target_build=$pwd
 
@@ -29,6 +33,9 @@ target_build=$pwd
 source="../NLMech"
 
 # run cmake with flags
+# Note: add following flag for building new version with Quasistatic
+# -DBLAZEITERATIVE_DIR="$blazeit_dir" 
+#
 cmake -DHPX_DIR="$hpx_dir""/lib/cmake/HPX" \
  	  -DYAML_CPP_DIR="$yamlcpp_dir" \
  	  -Dblaze_DIR="$blaze_dir""/share/blaze/cmake" \
