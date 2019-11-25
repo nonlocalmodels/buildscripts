@@ -32,7 +32,7 @@ hpx_dir="$local/hpx/1.3.0"
 blaze_dir="$local/blaze/3.5"
 
 # blazeiterative (master branch date: 13 October 2019)
-blazeit_dir="$local/blazeit/13Oct2019"
+blazeit_dir="$local/blazeit/13Oct19"
 
 # target directory where code will be built
 target_build=$pwd
