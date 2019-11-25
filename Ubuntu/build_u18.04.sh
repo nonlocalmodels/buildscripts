@@ -1,30 +1,41 @@
 #!/bin/bash
 
 # local directory with external libraries
-local="${HOME}/Softwares/local"
+local="${HOME}/Softwares/local_pd"
 
 # clean previous build files (optional)
 ./clean.sh
 
-# hpx
-hpx_ver="1.1.0"
-hpx_dir="$local""/hpx/hpx-""$hpx_ver"
+#
+# dependencies
+#
+
+# boost
+# sudo apt-get install libboost-dev
 
 # vtk
-# for ubuntu 18.04, can install vtk dev using
 # sudo apt-get install libvtk7-dev
 
 # yaml-cpp
-yamlcpp_ver="0.5.3"
-yamlcpp_dir="$local""/yaml-cpp/yaml-cpp-""$yamlcpp_ver"
+# sudo apt-get install libyaml-cpp-dev
+
+# hwloc
+# sudo apt-get install libhwloc-dev
+
+# jemalloc
+# sudo apt-get install libhwloc-dev
+
+# hpx (Built with jemalloc 4.4.0 with cmake flag -DHPX_WITH_MALLOC=jemalloc)
+hpx_ver="1.3.0"
+hpx_dir="$local/hpx/$hpx_ver"
 
 # blaze
 blaze_ver="3.5"
-blaze_dir="$local""/blaze/blaze-""$blaze_ver"
+blaze_dir="$local/blaze/$blaze_ver"
 
-# blazeiterative
+# blazeiterative (master branch date: 13 October 2019)
 blazeit_ver="13Oct2019"
-blazeit_dir="$local""/blazeiterative/BlazeIterative-""$blaze_ver"
+blazeit_dir="$local/blazeit/$blaze_ver"
 
 # target directory where code will be built
 target_build=$pwd
@@ -36,13 +47,13 @@ source="../NLMech"
 # Note: add following flag for building new version with Quasistatic
 # -DBLAZEITERATIVE_DIR="$blazeit_dir" 
 #
-cmake -DHPX_DIR="$hpx_dir""/lib/cmake/HPX" \
- 	  -DYAML_CPP_DIR="$yamlcpp_dir" \
- 	  -Dblaze_DIR="$blaze_dir""/share/blaze/cmake" \
- 	  -Dblaze_INCLUDE_DIR="$blaze_dir""/include" \
-	  -DCMAKE_INSTALL_PREFIX="$target_build" \
-	  -DCMAKE_BUILD_TYPE=Release \
-	  "$source"
+cmake 	-DHPX_DIR="$hpx_dir/lib/cmake/HPX" \
+ 	-Dblaze_DIR="$blaze_dir/share/blaze/cmake" \
+ 	-Dblaze_INCLUDE_DIR="$blaze_dir/include" \
+	-DCMAKE_INSTALL_PREFIX="$target_build" \
+	-DBLAZEITERATIVE_INCLUDE="$blazeit_dir/include/BlazeIterative" \
+	-DCMAKE_BUILD_TYPE=Release \
+	"$source"
 
 # make
 make -j 8
