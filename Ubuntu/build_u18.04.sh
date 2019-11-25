@@ -23,7 +23,7 @@ local="${HOME}/Softwares/local_pd"
 # sudo apt-get install libhwloc-dev
 
 # jemalloc
-# sudo apt-get install libhwloc-dev
+# sudo apt-get install libjemalloc-dev
 
 # hpx (Built with jemalloc 4.4.0 with cmake flag -DHPX_WITH_MALLOC=jemalloc)
 hpx_ver="1.3.0"
