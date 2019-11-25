@@ -26,16 +26,13 @@ local="${HOME}/Softwares/local_pd"
 # sudo apt-get install libjemalloc-dev
 
 # hpx (Built with jemalloc 4.4.0 with cmake flag -DHPX_WITH_MALLOC=jemalloc)
-hpx_ver="1.3.0"
-hpx_dir="$local/hpx/$hpx_ver"
+hpx_dir="$local/hpx/1.3.0"
 
 # blaze
-blaze_ver="3.5"
-blaze_dir="$local/blaze/$blaze_ver"
+blaze_dir="$local/blaze/3.5"
 
 # blazeiterative (master branch date: 13 October 2019)
-blazeit_ver="13Oct2019"
-blazeit_dir="$local/blazeit/$blaze_ver"
+blazeit_dir="$local/blazeit/13Oct2019"
 
 # target directory where code will be built
 target_build=$pwd
