@@ -23,7 +23,7 @@ jobs:
            name: Deploy to DockerHub
            command: |
              if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker login -u ${DOCKER_USER} -p ${TOKEN}
                 docker push ${IMAGE_NAME}
              fi
         - run: 
