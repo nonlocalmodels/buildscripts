@@ -6,13 +6,15 @@
 FROM diehlpk/nonlocalmodels:baseimage
 MAINTAINER Patrick Diehl <patrickdiehl@lsu.edu> 
 
+WORKDIR /app
+
 ENV CC gcc
 ENV CXX g++
 
 RUN git clone https://github.com/nonlocalmodels/NLMech.git  --depth=1
 
-RUN mkdir build && cd build
+RUN cd NLMech
 
-RUN cmake -DHPX_IGNORE_COMPILER_COMPATIBILITY=ON -DCMAKE_BUILD_TYPE=Release ..
+RUN cd /app/NLMECH mkdir build && cd build &&  cmake -DHPX_IGNORE_COMPILER_COMPATIBILITY=ON -DCMAKE_BUILD_TYPE=Release .. && suda make install
 
 RUN make -j 
