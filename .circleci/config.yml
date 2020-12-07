@@ -31,7 +31,7 @@ jobs:
            command: |
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 docker login docker.pkg.github.com --username diehlpk -p ${TOKEN}
-                docker tag ${IMAGE_NAME} docker.pkg.github.com/nonlocalmodels/nlmech/stable:latest
+                docker tag ${IMAGE_NAME} docker.pkg.github.com/nonlocalmodels/nlmech/nlmech:stable
                 docker push docker.pkg.github.com/nonlocalmodels/nlmech/nlmech:stable
               fi
 workflows:
