@@ -12,9 +12,9 @@ We provide bash scripts to compile the code on
 
 ## Docker
 
-We provide dokcerfiles to build the code on
+We provide Dokcerfiles to build the latest stable version of NLMech on
 
-* Fedora using the HPX package (Docker/Fedora)
+* [Fedora](https://github.com/nonlocalmodels/NLMech/packages/384758?version=stable)  using the HPX package (Docker/Fedora)
 * Fedora compiling HPX (Docker/FedoraAll)
 
 You have to install [Docker](https://docs.docker.com/) on your local machine and can play around with the code as following
