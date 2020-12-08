@@ -20,13 +20,6 @@ jobs:
               docker build -t ${IMAGE_NAME} - < ${IMAGE_FOLDER_NAME}
               docker images
         - run: 
-           name: Deploy to DockerHub
-           command: |
-             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                docker login -u ${DOCKER_USER} -p ${TOKEN}
-                docker push ${IMAGE_NAME}
-             fi
-        - run: 
            name: Deploy to GitHub
            command: |
               if [ "${CIRCLE_BRANCH}" == "master" ]; then
