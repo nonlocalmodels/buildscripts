@@ -37,5 +37,13 @@ make install && \
 cd .. && \
 rm -rf BlazeIterative
 
+# Install NLMech
+RUN git clone https://github.com/nonlocalmodels/NLMech.git && \
+cd NLMech && \
+mkdir build && \
+cd build &&
+cmake -DCMAKE_BUILD_TYPE=Release -DEnable_Documentation=ON -DEnable_Tools=ON -DEnable_PCL=ON .. && \
+make install 
+
 # Install 
 RUN python3 -m pip install cpp-coveralls
