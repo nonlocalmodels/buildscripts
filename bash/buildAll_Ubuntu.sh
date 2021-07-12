@@ -4,12 +4,6 @@
 # file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 #!/usr/bin/bash
 
-
-sudo apt-get update
-
-sudo apt-get install build-essential git wget cmake openssl libssl-dev libblas-dev liblapack-dev autoconf freeglut3-dev
-
-
 git clone https://github.com/nonlocalmodels/HPCBuildInfrastructure.git
 cd HPCBuildInfrastructure/
 echo "Building cmake"
